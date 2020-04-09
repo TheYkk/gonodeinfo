@@ -1,4 +1,4 @@
-FROM golang:1.11 as builder
+FROM golang:1.13-alpine as builder
 WORKDIR /go/theykk
 COPY nodeinfo.go .
 RUN CGO_ENABLED=0 go build -a --installsuffix cgo --ldflags="-s" -o nodeinfo
